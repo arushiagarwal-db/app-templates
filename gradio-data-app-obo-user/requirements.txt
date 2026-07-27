@@ -2,8 +2,4 @@ databricks-sdk~=0.33.0
 databricks-sql-connector~=3.4.0
 gradio~=4.44.0
 huggingface-hub~=0.35.3
-# Pin starlette<0.38: gradio 4.44 uses the older Starlette TemplateResponse
-# calling convention. starlette>=0.38 passes a dict where the template name is
-# expected, which crashes Jinja2 with "unhashable type: 'dict'" on startup.
-# On horizontally-scaled (multi-replica) Databricks Apps this surfaces as a 502.
 starlette<0.38
